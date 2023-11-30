@@ -183,6 +183,11 @@ nav{
 .cardDestaque img{
     width: calc(100%/2);
     max-width: 400px;
+    transition: transform .2s;
+}
+
+.cardDestaque img:hover{
+    transform: scale(1.02);
 }
 
 .quemSomosContainer{
@@ -585,7 +590,7 @@ footer{
 }
 
 .fullScreenContainer.active{
-    animation: fadeIn 2s;
+    animation: fadeIn 1.5s;
     opacity: 1;
 }
 
