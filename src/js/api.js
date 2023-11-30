@@ -4,7 +4,7 @@ function createItens (item, index){
     let newPrice = item.price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
 
     itemMoto.setAttribute('data-key', item.id);
-    itemMoto.querySelector('.itemMoto div img').src = './src/images/motos/'+ item.id + '/capa.webp';
+    itemMoto.querySelector('.itemMoto div img').src = './src/images/motos/'+ item.id + '/1.webp';
     itemMoto.querySelector('.itemMoto div img').setAttribute('title', item.model);
     itemMoto.querySelector('.itemMoto div img').setAttribute('alt', item.model);
     itemMoto.querySelector('.itemMoto div button').setAttribute('id', item.id);

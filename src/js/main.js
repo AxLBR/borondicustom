@@ -1,6 +1,7 @@
 //Abre video na modal
 function openItem (key){
   let fullScreen = document.querySelector('.fullScreen');
+  let fullScreenContainer = document.querySelector('.fullScreenContainer');
   let moto;
 
   reverseMotosJson.map((item, index) => {
@@ -24,7 +25,7 @@ function openItem (key){
   document.querySelector('.motoText').innerHTML = moto.description;
 
   for(let i=1; i<=4; i++){
-    document.querySelector(".motoPictures").innerHTML += `<div class="carrosselFullscreen"><img src="./src/images/motos/${key}/foto${i}.webp"/></div>`;
+    document.querySelector(".motoPictures").innerHTML += `<div class="carrosselFullscreen"><img src="./src/images/motos/${key}/${i}.webp"/></div>`;
   }
 
   $(document).ready(function(){
@@ -63,6 +64,7 @@ function openItem (key){
 
   $('html').css({overflowY: 'hidden'});
   fullScreen.style.display = 'block';  
+  fullScreenContainer.classList.add("active");
 }
 
 //Fecha modal

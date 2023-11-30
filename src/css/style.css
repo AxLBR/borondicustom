@@ -301,6 +301,11 @@ nav{
 .motoImg{
     width: 85%;
     max-width: 400px;
+    transition: transform .3s;
+}
+
+.motoImg:hover{
+    transform: scale(1.03);
 }
 
 .motoModel{
@@ -426,6 +431,11 @@ nav{
 .redesContato img{
     width: 50%;
     max-width: 200px;
+    transition: transform .3s;
+}
+
+.redesContato img:hover{
+    transform: scale(1.07);
 }
 
 .redesContatoImg{
@@ -547,6 +557,18 @@ footer{
     opacity: 0.5;
 }
 
+@keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      10% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+}
+
 .fullScreenContainer{
     width: 90%;
     max-width: 1400px;
@@ -559,7 +581,14 @@ footer{
     margin: 0 auto;
     position: relative;
     top: 5%;
+    opacity: 0;
 }
+
+.fullScreenContainer.active{
+    animation: fadeIn 2s;
+    opacity: 1;
+}
+
 
 .infoMoto{
     color: #EFEFEF;
@@ -660,6 +689,19 @@ footer{
     align-items: center !important;
     text-align: center !important;
 }
+
+.reveal{
+    position: relative;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
 
 /* FLECHA, MODELOS E TRANSIÇÃO EM BLOCOS */
 .upArrow{
