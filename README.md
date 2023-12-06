@@ -1,6 +1,6 @@
 # Borondi Custom
 
-![preview](./src/images/preview.jpg)
+![preview](./src/images/preview.JPG)
 
 Projeto desenvolvido para a Borondi Custom.
 
