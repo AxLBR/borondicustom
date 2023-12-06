@@ -9,9 +9,8 @@ Projeto desenvolvido para a Borondi Custom.
 - Estilização da página
 - Animações de interatividade com botões, rolagem e imagens
 - Botões de contatos
-- Showroom com vídeo principal
 - Carrossel de cards com fotos das motos
-- Visualização das motos em tela cheia
+- Visualização das motos em tela cheia com informações
 - Código semântico para SEO
 - Smooth Scroll
 - Responsividade
