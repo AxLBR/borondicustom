@@ -6,7 +6,7 @@ let motosJson = [
         price: '34900',
         kms: '',
         description: 'Pastilhas de freio novas | Alarme Original HD | Documentos em dia | Aceitamos moto na troca | Também pegamos carro',
-        sell: 'no'
+        sell: 'yes'
     },
     {
         id: 1,
@@ -69,6 +69,15 @@ let motosJson = [
         price: '31900',
         kms: '69 mil km rodados',
         description: 'Valor agregado de customização acima de R$6.000 | Banco personalizado | Valor abaixo da FIPE',
+        sell: 'no'
+    },
+    {
+        id: 8,
+        model: 'Honda Shadow VT 600 C',
+        year: '2003',
+        price: '23500',
+        kms: '',
+        description: 'Pneus e mecânica ok | Documentos em dia | Freio com aeroquipe | Possui protetor de cárter | Possui detalhes estéticos | Valor abaixo da FIPE',
         sell: 'no'
     },
 ];
