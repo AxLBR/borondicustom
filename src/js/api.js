@@ -20,12 +20,12 @@ function createItens (item, index){
         itemMoto.querySelector('.motoPrice').className  = 'vendido';
     }
     
-    //Preenche os videos na página
+    //Preenche as motos na página
     document.querySelector('.produtos').append(itemMoto);
 }
 
-//Listagem dos vídeos
-let reverseMotosJson = motosJson.reverse();
+//Listagem das motos
+let reverseMotosJson = motosJson;
 
 reverseMotosJson.map((item, index) => {
     createItens(reverseMotosJson[index], index);
@@ -37,30 +37,26 @@ $(document).ready(function(){
     dots: false,
     infinite: false,
     rows: 2,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesPerRow: 3,
 
     responsive: [{
             breakpoint: 1015,
             settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
+                slidesPerRow: 2,
             }
         },
         {
             breakpoint: 1260,
             settings: {
-                slidesToShow: 2,
                 rows: 2,
-                slidesToScroll: 1
+                slidesPerRow: 2,
             }
         },
         {
             breakpoint: 900,
             settings: {
-                slidesToShow: 1,
                 rows: 2,
-                slidesToScroll: 1
+                slidesPerRow: 1,
             }
         }]
     });

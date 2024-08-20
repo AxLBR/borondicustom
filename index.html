@@ -20,6 +20,7 @@
 		<meta property="og:description" content="Loja de vendas de motos localizada em Canoas/RS e especializada em Harley Davidson! Atendimento presencial com horário marcado.">
 		<meta property="og:url" content="https://www.borondicustom.com.br/">
 		<meta property="og:site_name" content="Borondi Custom">
+        <meta name="format-detection" content="telephone=no">
 
         <!-- Favicons --> 
         <link rel="apple-touch-icon" sizes="57x57" href="./src/favicons/android-chrome-192x192.png">
@@ -29,6 +30,7 @@
         <link rel="icon" type="image/png" sizes="192x192"  href="./src/favicons/android-icon-192x192.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./src/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="./src/favicons/favicon-16x16.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" defer/>
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" defer/>
     </head>
@@ -55,7 +57,7 @@
                     </li>  
                     <label>|</label>
                     <li>
-                        <a href="#produtos"> Produtos </a>
+                        <a href="#produtos"> Catálogo </a>
                     </li>  
                     <label>|</label>
                     <li>
@@ -63,26 +65,28 @@
                     </li>                        
                 </ul>
             </div>
+            
+            <!-- Menu Mobile -->
             <div class="menuMobile">
                 <ul>
                     <li>
                         <img src="./src/assets/menu-mobile.webp" alt="Menu Hambúrguer Mobile">
                         <ul>
-                            <li>
-                                <a href="#home"> Home </a>
-                            </li>  
-                            <label>|</label>
-                            <li>
-                                <a href="#quemSomos"> Quem Somos </a>
-                            </li>  
-                            <label>|</label>
-                            <li>
-                                <a href="#produtos"> Produtos </a>
-                            </li>  
-                            <label>|</label>
-                            <li>
-                                <a href="#contato"> Contato </a>
-                            </li>    
+                            <a href="#home"> 
+                                <li> Home </li>  
+                            </a>
+
+                            <a href="#quemSomos">
+                                <li> Quem Somos </li>
+                            </a>  
+
+                            <a href="#produtos"> 
+                                <li> Catálogo </li> 
+                            </a>
+
+                            <a href="#contato"> 
+                                <li> Contato </li>  
+                            </a>
                         </ul>
                     </li>
                 </ul>
@@ -96,7 +100,7 @@
                     <img src="./src/assets/logo.png" alt="Logotipo da Borondi Custom">
                     <p>Borondi Custom</p>
                     <p>Venda de motos especializada em Harley-Davidson®</p>
-                    <button><a href="#produtos">VEJA NOSSOS PRODUTOS</a></button>
+                    <button><a href="#produtos">VEJA NOSSO CATÁLOGO</a></button>
                 </div>
             </section>
 
@@ -106,11 +110,12 @@
                     <div class="headerQuemSomos reveal">
                         <h4>QUEM SOMOS</h4>
                         <h1>Um pouco mais sobre nós!</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur. Elementum consequat id et donec orci. Elit eu quam tortor ut facilisi donec. Nullam sit euismod odio enim turpis proin odio.</p>
-                        <br>
-                        <p>Pellentesque et integer senectus sem mauris mollis aliquam. Neque scelerisque mattis aliquam morbi sed dictum eu. Lorem sed semper pellentesque nulla vel egestas.</p>
-                        <br>
-                        <p>Aliquam. Neque scelerisque mattis aliquam morbi sed dictum eu. Lorem sed semper pellentesque nulla vel egestas.</p>
+                        <p>Aqui na Borondi Custom a paixão por Harley-Davidson é mais do que um negócio - é um estilo de vida, oferecendo aos clientes uma experiência única na estrada.</p>
+						<br>
+						<p>Nossa excelência reside na certificação e homologação concedidas pela Harley-Davidson Motor Company® em 1999, essa parceria sólida é um selo de qualidade que carregamos em cada transação, refletindo nosso compromisso com a transparência e a entrega de motocicletas excepcionais. </p>
+						<br>
+						<p>Na Borondi Custom acreditamos que nossos clientes não apenas compram uma moto, mas embarcam em uma jornada de estilo de vida. 
+						Nosso compromisso é construir relacionamentos duradouros, onde cada interação é marcada pela paixão compartilhada pelo motociclismo. </p>
                     </div >
                         
                     <div class="imagens reveal">
@@ -123,9 +128,9 @@
             <!-- Produtos --> 
             <section id="produtos" class="produtosContainer">
                 <div class="headerProdutos reveal">
-                    <h4>PRODUTOS</h4>
+                    <h4>CATÁLOGO</h4>
                     <h1>Conheça os nossos produtos!</h1>
-                    <p>Temos uma variedade de produtos à sua disposição.</p>
+                    <p>Temos uma variedade de modelos à sua disposição.</p>
                 </div>
 
                 <div class="produtos reveal">
@@ -174,6 +179,19 @@
             <a href="#home"> <img src="./src/assets/up.webp" alt="Seta de navegação cima"> </a>
         </div>
 
+        <!-- Barra de redes sociais flutuantes -->
+        <div class="floating-bar">
+            <a href="https://wa.me/5191353965?text=Olá, gostaria de entrar em contato sobre..." target="_blank" class="whats">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.instagram.com/borondicustom" target="_blank" class="instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/marketplace/profile/100084525154113/" target="_blank" class="facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+
         <!-- Modelo de card para o carrossel --> 
         <div class="model">
             <div class="itemMoto">
@@ -194,13 +212,18 @@
                 <div class="infoMoto">
                     <div class="motoHead">
                         <p></p>
-                        <button></button>
+                        <div>
+                            <button class="productValue"></button>
+                            <a href="" class="proposalButton"> 
+                                <i class="fab fa-whatsapp"></i>
+                                Enviar proposta 
+                            </a>
+                        </div>
                     </div>
                     <p class="motoOther"></p>
                     <div class="motoPictures"></div>
                     <p class="motoText"></p>
-                    <p class="motoPayment">Entrada facilitada em até 18x | Parcelamos sua moto em até 48x | Fazemos aprovação de crédito na hora e também por WhatsApp </br>                       
-                    💳 Trabalhamos com todos os cartões de crédito em até 18x com taxas competitivas no mercado 💳</p>
+                    <p class="motoPayment"></p>
                 </div>
             </div>
         </div>
