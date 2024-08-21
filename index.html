@@ -4,20 +4,21 @@
         <!-- Configurações Gerais Site --> 
         <title>Borondi Custom</title>
         <link href="./src/css/style.css" rel="stylesheet">
+        <link rel="preload" href="./src/images/bg-destaque2.webp" as="image">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;900&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;900&family=Poppins:wght@300;500;700&display=swap">
 		<link rel="canonical" href="https://www.borondicustom.com.br/">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Loja de vendas de motos localizada em Canoas/RS e especializada em Harley Davidson! Atendimento presencial com horário marcado."> 
-        <meta name="keywords" content="borondi, borondi custom, venda, motos, harley, harley davidson, canoas, porto alegre, rio grande do sul, RS">
+        <meta name="description" content="Loja de motos localizada em Canoas/RS, especializada e certificada em Harley-Davidson® desde 1999! Atendimento presencial com hora marcada."> 
+        <meta name="keywords" content="borondi, borondi custom, venda, motos, harley, harley davidson, canoas, porto alegre, rio grande do sul, RS, loja, iron, shadow, honda, sportster, 883, motocicletas">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 		<meta property="og:locale" content="pt_BR">
 		<meta property="og:type" content="website">
 		<meta property="og:title" content="Borondi Custom">
-		<meta property="og:description" content="Loja de vendas de motos localizada em Canoas/RS e especializada em Harley Davidson! Atendimento presencial com horário marcado.">
+		<meta property="og:description" content="Loja de motos localizada em Canoas/RS, especializada e certificada em Harley-Davidson® desde 1999! Atendimento presencial com hora marcada.">
 		<meta property="og:url" content="https://www.borondicustom.com.br/">
 		<meta property="og:site_name" content="Borondi Custom">
         <meta name="format-detection" content="telephone=no">
@@ -30,18 +31,29 @@
         <link rel="icon" type="image/png" sizes="192x192"  href="./src/favicons/android-icon-192x192.png">
         <link rel="icon" type="image/png" sizes="32x32" href="./src/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="./src/favicons/favicon-16x16.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" defer/>
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" defer/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" >
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
     </head>
 
-    <body id="home">
+    <body id="home" style="background-image: url(./src/images/bg-destaque2.webp);">
         <!-- Barra de Navegação --> 
         <nav>
             <!-- Logotipo --> 
             <div class="logo">
                 <a href="/">
-                    <img src="./src/assets/logo.png" alt="Logotipo da Borondi Custom">
+                    <img 
+                    sizes="(min-width: 1020px) 100px, 70px"
+                    srcset="
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_200.webp 200w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_485.webp 485w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_688.webp 688w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_857.webp 857w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1010.webp 1010w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1222.webp 1222w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp 1400w"
+                    src="./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp"
+                    alt="Logotipo Borondi Custom">
                 </a>  
             </div>
 
@@ -97,7 +109,18 @@
             <!-- Home --> 
             <section class="home">
                 <div class="cardDestaque">
-                    <img src="./src/assets/logo.png" alt="Logotipo da Borondi Custom">
+                    <img 
+                    sizes="(min-width: 540px) 400px, (min-width: 340px) calc(71.11vw + 30px), calc(-220vw + 960px)"
+                    srcset="
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_200.webp 200w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_485.webp 485w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_688.webp 688w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_857.webp 857w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1010.webp 1010w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1222.webp 1222w,
+                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp 1400w"
+                    src="./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp"
+                    alt="Logotipo Borondi Custom">
                     <p>Borondi Custom</p>
                     <p>Venda de motos especializada em Harley-Davidson®</p>
                     <button><a href="#produtos">VEJA NOSSO CATÁLOGO</a></button>
@@ -108,8 +131,8 @@
             <section id="quemSomos" class="quemSomosContainer">
                 <div class="quemSomos">
                     <div class="headerQuemSomos reveal">
-                        <h4>QUEM SOMOS</h4>
-                        <h1>Um pouco mais sobre nós!</h1>
+                        <h1>QUEM SOMOS</h1>
+                        <h2>Um pouco mais sobre nós!</h2>
                         <p>Aqui na Borondi Custom a paixão por Harley-Davidson é mais do que um negócio - é um estilo de vida, oferecendo aos clientes uma experiência única na estrada.</p>
 						<br>
 						<p>Nossa excelência reside na certificação e homologação concedidas pela Harley-Davidson Motor Company® em 1999, essa parceria sólida é um selo de qualidade que carregamos em cada transação, refletindo nosso compromisso com a transparência e a entrega de motocicletas excepcionais. </p>
@@ -118,9 +141,37 @@
 						Nosso compromisso é construir relacionamentos duradouros, onde cada interação é marcada pela paixão compartilhada pelo motociclismo. </p>
                     </div >
                         
-                    <div class="imagens reveal">
-                        <img src="./src/images/borondi1.webp" alt="Inicio da Borondi Custom">
-                        <img src="./src/images/borondi2.webp" alt="Inicio da Borondi Custom">
+                    <div class="reveal">
+                        <div class="imagens">
+                            <img src="./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1400.webp" 
+                            sizes="(min-width: 1280px) 21.98vw, 66.04vw"
+                            srcset="
+                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_200.webp 200w,
+                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_498.webp 498w,
+                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_683.webp 683w,
+                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_897.webp 897w,
+                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1104.webp 1104w,
+                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1291.webp 1291w,
+                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1294.webp 1294w,
+                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1381.webp 1381w,
+                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1400.webp 1400w"
+                            alt="Inicio da Borondi Custom">
+
+                            <img src="./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1400.webp" 
+                            sizes="(min-width: 1280px) 21.98vw, 66.04vw"
+                            srcset="
+                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_200.webp 200w,
+                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_524.webp 524w,
+                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1020.webp 1020w,
+                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_996.webp 996w,
+                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1099.webp 1099w,
+                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1384.webp 1384w,
+                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1398.webp 1398w,
+                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1400.webp 1400w"
+                            alt="Inicio da Borondi Custom">
+                        </div>
+
+                        <button class="certificates"> <a href="./certificacoes.html"> VER CERTIFICAÇÕES </a> </button>
                     </div>
                 </div>
             </section>
@@ -128,8 +179,8 @@
             <!-- Produtos --> 
             <section id="produtos" class="produtosContainer">
                 <div class="headerProdutos reveal">
-                    <h4>CATÁLOGO</h4>
-                    <h1>Conheça os nossos produtos!</h1>
+                    <h1>CATÁLOGO</h1>
+                    <h2>Conheça os nossos produtos!</h2>
                     <p>Temos uma variedade de modelos à sua disposição.</p>
                 </div>
 
@@ -142,19 +193,31 @@
             <section id="contato" class="contatoContainer">
                 <div class="contato">
                     <div class="headerContato reveal">
-                        <h4>CONTATO</h4>
-                        <h1>Fale com a gente!</h1>
+                        <h1>CONTATO</h1>
+                        <h2>Fale com a gente!</h2>
                         <div class="fone">
                             <a target="_blank" href="https://wa.me/5191353965?text=Olá, gostaria de entrar em contato sobre...">
                                 <img src="./src/assets/whatsapp.webp" alt="Ícone do aplicativo Whatsapp"/>
                             </a>
                             <p>(51) 99135-3965</p>
                         </div>
-                        <p>Atendimento presencial somente com hora marcada.</p>
+                        <p class="labelWarning">Atendimento presencial somente com hora marcada.</p>
+                        <p class="location">Canoas/RS</p>
                     </div>
 
                     <div class="redesContato reveal">
-                        <img src="./src/assets/logo.png" alt="Logotipo da Borondi Custom">
+                        <img  
+                        sizes="(min-width: 1980px) 200px, (min-width: 1020px) calc(9.89vw + 6px), (min-width: 820px) calc(15.56vw - 9px), (min-width: 660px) calc(18.57vw - 8px), (min-width: 520px) calc(20vw - 10px), (min-width: 480px) 200px, calc(38.13vw + 25px)"
+                        srcset="
+                        ./src/assets/logo/logo_kvsdvh_c_scale,w_200.webp 200w,
+                        ./src/assets/logo/logo_kvsdvh_c_scale,w_485.webp 485w,
+                        ./src/assets/logo/logo_kvsdvh_c_scale,w_688.webp 688w,
+                        ./src/assets/logo/logo_kvsdvh_c_scale,w_857.webp 857w,
+                        ./src/assets/logo/logo_kvsdvh_c_scale,w_1010.webp 1010w,
+                        ./src/assets/logo/logo_kvsdvh_c_scale,w_1222.webp 1222w,
+                        ./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp 1400w"
+                        src="./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp"
+                        alt="Logotipo da Borondi Custom">
                         <p>Nos acompanhe nas redes sociais!</p>
                         <div class="redesContatoImg">
                             <a target="_blank" href="https://www.instagram.com/borondicustom"><img src="./src/assets/instagram.webp" alt="Ícone do Instagram"></a>
@@ -181,13 +244,13 @@
 
         <!-- Barra de redes sociais flutuantes -->
         <div class="floating-bar">
-            <a href="https://wa.me/5191353965?text=Olá, gostaria de entrar em contato sobre..." target="_blank" class="whats">
+            <a href="https://wa.me/5191353965?text=Olá, gostaria de entrar em contato sobre..." aria-label="Whatsapp" target="_blank" class="whats">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <a href="https://www.instagram.com/borondicustom" target="_blank" class="instagram">
+            <a href="https://www.instagram.com/borondicustom" aria-label="Instagram" target="_blank" class="instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.facebook.com/marketplace/profile/100084525154113/" target="_blank" class="facebook">
+            <a href="https://www.facebook.com/marketplace/profile/100084525154113/" aria-label="Facebook" target="_blank" class="facebook">
                 <i class="fab fa-facebook-f"></i>
             </a>
         </div>
@@ -231,7 +294,7 @@
         <!-- Scripts da página --> 
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.4.1.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" async></script>
         <script type="text/javascript" src="./src/js/motos.js"></script>
         <script type="text/javascript" src="./src/js/api.js"></script>
         <script type="text/javascript" src="./src/js/main.js"></script>
