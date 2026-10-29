@@ -1,302 +1,968 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-    <head>
-        <!-- Configurações Gerais Site --> 
-        <title>Borondi Custom</title>
-        <link href="./src/css/style.css" rel="stylesheet">
-        <link rel="preload" href="./src/images/bg-destaque2.webp" as="image">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;900&family=Poppins:wght@300;500;700&display=swap">
-		<link rel="canonical" href="https://www.borondicustom.com.br/">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="Loja de motos localizada em Canoas/RS, especializada e certificada em Harley-Davidson® desde 1999! Atendimento presencial com hora marcada."> 
-        <meta name="keywords" content="borondi, borondi custom, venda, motos, harley, harley davidson, canoas, porto alegre, rio grande do sul, RS, loja, iron, shadow, honda, sportster, 883, motocicletas">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-		<meta property="og:locale" content="pt_BR">
-		<meta property="og:type" content="website">
-		<meta property="og:title" content="Borondi Custom">
-		<meta property="og:description" content="Loja de motos localizada em Canoas/RS, especializada e certificada em Harley-Davidson® desde 1999! Atendimento presencial com hora marcada.">
-		<meta property="og:url" content="https://www.borondicustom.com.br/">
-		<meta property="og:site_name" content="Borondi Custom">
-        <meta name="format-detection" content="telephone=no">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KS8QFRSK");
+    </script>
+    <!-- End Google Tag Manager -->
 
-        <!-- Favicons --> 
-        <link rel="apple-touch-icon" sizes="57x57" href="./src/favicons/android-chrome-192x192.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="./src/favicons/android-chrome-512x512.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="./src/favicons/apple-touch-icon.png">
-		<link rel="icon" href="./src/favicons/favicon.ico">
-        <link rel="icon" type="image/png" sizes="192x192"  href="./src/favicons/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./src/favicons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./src/favicons/favicon-16x16.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" >
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-    </head>
+    <!-- Preconnect e DNS Prefetch para CDNs -->
+    <link rel="preconnect" href="https://code.jquery.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link
+      rel="preconnect"
+      href="https://www.googletagmanager.com"
+      crossorigin
+    />
+    <link rel="dns-prefetch" href="https://code.jquery.com" />
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-    <body id="home" style="background-image: url(./src/images/bg-destaque2.webp);">
-        <!-- Barra de Navegação --> 
-        <nav>
-            <!-- Logotipo --> 
-            <div class="logo">
-                <a href="/">
-                    <img 
-                    sizes="(min-width: 1020px) 100px, 70px"
-                    srcset="
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_200.webp 200w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_485.webp 485w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_688.webp 688w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_857.webp 857w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1010.webp 1010w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1222.webp 1222w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp 1400w"
-                    src="./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp"
-                    alt="Logotipo Borondi Custom">
-                </a>  
-            </div>
+    <!-- Configurações Gerais Site -->
+    <title>
+      Borondi Custom | Customização, Revisão e Venda de Motos em Canoas/RS
+    </title>
+    <!-- CSS principal com carregamento otimizado -->
+    <link rel="preload" href="./src/css/style.min.css" as="style" />
+    <link
+      href="./src/css/style.min.css"
+      rel="stylesheet"
+      media="print"
+      onload="
+        this.media = 'all';
+        this.onload = null;
+      "
+    />
+    <noscript
+      ><link href="./src/css/style.min.css" rel="stylesheet"
+    /></noscript>
+    <!-- Preload de Fontes -->
+    <link
+      rel="preload"
+      href="./src/fonts/Poppins-300.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./src/fonts/Poppins-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./src/fonts/Poppins-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <!-- Preload do Logo para prioridade máxima -->
+    <link
+      rel="preload"
+      href="./src/assets/logo/logo-1400.webp"
+      as="image"
+      fetchpriority="high"
+      imagesrcset="
+        ./src/assets/logo/logo-200.webp 200w,
+        ./src/assets/logo/logo-485.webp 485w,
+        ./src/assets/logo/logo-688.webp 688w,
+        ./src/assets/logo/logo-857.webp 857w,
+        ./src/assets/logo/logo-1010.webp 1010w,
+        ./src/assets/logo/logo-1222.webp 1222w,
+        ./src/assets/logo/logo-1400.webp 1400w"
+      imagesizes="(min-width: 1020px) 100px, 70px"
+    />
+    <!-- LCP Image Preload with high priority -->
+    <link
+      rel="preload"
+      href="./src/images/bg-destaque2.webp"
+      as="image"
+      fetchpriority="high"
+    />
+    <link rel="canonical" href="https://www.borondicustom.com.br/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Customização, revisão e revenda de motos em Canoas/RS. Projetos custom exclusivos, revisão para todas as marcas e Harley-Davidson seminovas desde 1999."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="theme-color" content="#1c1c1c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Borondi Custom | Customização, Revisão e Venda de Motos em Canoas/RS"
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Borondi Custom | Customização, Revisão e Venda de Motos em Canoas/RS"
+    />
+    <meta
+      property="og:description"
+      content="Customização, revisão e revenda de motos em Canoas/RS. Projetos custom exclusivos, revisão para todas as marcas e Harley-Davidson seminovas desde 1999."
+    />
+    <meta property="og:url" content="https://www.borondicustom.com.br/" />
+    <meta property="og:site_name" content="Borondi Custom" />
+    <meta
+      property="og:image"
+      content="https://www.borondicustom.com.br/src/images/og-borondi.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Borondi Custom - Customização, revisão e venda de motos" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <!-- Thumbnail alternativa para Google -->
+    <meta
+      property="image"
+      content="https://www.borondicustom.com.br/src/images/og-borondi.jpg"
+    />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Borondi Custom | Customização, Revisão e Venda de Motos em Canoas/RS"
+    />
+    <meta
+      name="twitter:description"
+      content="Customização, revisão e revenda de motos em Canoas/RS. Projetos custom exclusivos, revisão para todas as marcas e Harley-Davidson seminovas desde 1999."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.borondicustom.com.br/src/images/og-borondi.jpg"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- Snippet para forçar imagem correta no Google Search -->
+    <link
+      rel="image_src"
+      href="https://www.borondicustom.com.br/src/images/og-borondi.jpg"
+    />
+    <!-- Web App Manifest para PWA -->
+    <link rel="manifest" href="./manifest.json" />
 
-            <!-- Menu --> 
-            <div class="menu">
-                <ul>
-                    <li>
-                        <a href="#home"> Home </a>
-                    </li>  
-                    <label>|</label>
-                    <li>
-                        <a href="#quemSomos"> Quem Somos </a>
-                    </li>  
-                    <label>|</label>
-                    <li>
-                        <a href="#produtos"> Catálogo </a>
-                    </li>  
-                    <label>|</label>
-                    <li>
-                        <a href="#contato"> Contato </a>
-                    </li>                        
-                </ul>
-            </div>
-            
-            <!-- Menu Mobile -->
-            <div class="menuMobile">
-                <ul>
-                    <li>
-                        <img src="./src/assets/menu-mobile.webp" alt="Menu Hambúrguer Mobile">
-                        <ul>
-                            <a href="#home"> 
-                                <li> Home </li>  
-                            </a>
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./src/favicons/android-chrome-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./src/favicons/android-chrome-512x512.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./src/favicons/apple-touch-icon.png"
+    />
+    <link rel="icon" href="./src/favicons/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./src/favicons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./src/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./src/favicons/favicon-16x16.png"
+    />
+    <!-- Font Awesome CDN - Preload to reduce rendering impact -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    /></noscript>
+    <!-- Slick Carousel CSS - Preload to reduce rendering impact -->
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    /></noscript>
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+    /></noscript>
+    <!-- Dados Estruturados JSON-LD para SEO -->
+    <script src="./src/js/structured-data.min.js" async></script>
+  </head>
 
-                            <a href="#quemSomos">
-                                <li> Quem Somos </li>
-                            </a>  
+  <body
+    id="home"
+    data-bg-image="./src/images/bg-destaque2.webp"
+    style="background-image: url(./src/images/bg-destaque2.webp)"
+  >
+    <!-- LCP Background Image with high fetch priority -->
+    <img
+      src="./src/images/bg-destaque2.webp"
+      fetchpriority="high"
+      style="display: none; position: absolute; width: 0; height: 0"
+      alt=""
+    />
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KS8QFRSK"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-                            <a href="#produtos"> 
-                                <li> Catálogo </li> 
-                            </a>
+    <!-- Barra de Navegação -->
+    <nav>
+      <!-- Logotipo -->
+      <div class="logo">
+        <a href="/">
+          <img
+            sizes="(min-width: 1020px) 100px, 70px"
+            srcset="
+              ./src/assets/logo/logo-200.webp   200w,
+              ./src/assets/logo/logo-485.webp   485w,
+              ./src/assets/logo/logo-688.webp   688w,
+              ./src/assets/logo/logo-857.webp   857w,
+              ./src/assets/logo/logo-1010.webp 1010w,
+              ./src/assets/logo/logo-1222.webp 1222w,
+              ./src/assets/logo/logo-1400.webp 1400w
+            "
+            src="./src/assets/logo/logo-1400.webp"
+            alt="Logotipo Borondi Custom"
+          />
+        </a>
+      </div>
 
-                            <a href="#contato"> 
-                                <li> Contato </li>  
-                            </a>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+      <!-- Menu -->
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="#home"> Home </a>
+          </li>
+          <li aria-hidden="true">|</li>
+          <li>
+            <a href="#customizacao"> Customização </a>
+          </li>
+          <li aria-hidden="true">|</li>
+          <li>
+            <a href="#revisao"> Revisão </a>
+          </li>
+          <li aria-hidden="true">|</li>
+          <li>
+            <a href="#produtos"> Catálogo </a>
+          </li>
+          <li aria-hidden="true">|</li>
+          <li>
+            <a href="#quemSomos"> Quem Somos </a>
+          </li>
+          <li aria-hidden="true">|</li>
+          <li>
+            <a href="#contato"> Contato </a>
+          </li>
+        </ul>
+      </div>
 
-        <main>
-            <!-- Home --> 
-            <section class="home">
-                <div class="cardDestaque">
-                    <img 
-                    sizes="(min-width: 540px) 400px, (min-width: 340px) calc(71.11vw + 30px), calc(-220vw + 960px)"
-                    srcset="
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_200.webp 200w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_485.webp 485w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_688.webp 688w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_857.webp 857w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1010.webp 1010w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1222.webp 1222w,
-                    ./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp 1400w"
-                    src="./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp"
-                    alt="Logotipo Borondi Custom">
-                    <p>Borondi Custom</p>
-                    <p>Venda de motos especializada em Harley-Davidson®</p>
-                    <button><a href="#produtos">VEJA NOSSO CATÁLOGO</a></button>
-                </div>
-            </section>
+      <!-- Menu Mobile -->
+      <div class="menuMobile">
+        <button
+          class="menuMobileBotao"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menuMobilePainel"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-            <!-- Quem Somos --> 
-            <section id="quemSomos" class="quemSomosContainer">
-                <div class="quemSomos">
-                    <div class="headerQuemSomos reveal">
-                        <h1>QUEM SOMOS</h1>
-                        <h2>Um pouco mais sobre nós!</h2>
-                        <p>Aqui na Borondi Custom a paixão por Harley-Davidson é mais do que um negócio - é um estilo de vida, oferecendo aos clientes uma experiência única na estrada.</p>
-						<br>
-						<p>Nossa excelência reside na certificação e homologação concedidas pela Harley-Davidson Motor Company® em 1999, essa parceria sólida é um selo de qualidade que carregamos em cada transação, refletindo nosso compromisso com a transparência e a entrega de motocicletas excepcionais. </p>
-						<br>
-						<p>Na Borondi Custom acreditamos que nossos clientes não apenas compram uma moto, mas embarcam em uma jornada de estilo de vida. 
-						Nosso compromisso é construir relacionamentos duradouros, onde cada interação é marcada pela paixão compartilhada pelo motociclismo. </p>
-                    </div >
-                        
-                    <div class="reveal">
-                        <div class="imagens">
-                            <img src="./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1400.webp" 
-                            sizes="(min-width: 1280px) 21.98vw, 66.04vw"
-                            srcset="
-                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_200.webp 200w,
-                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_498.webp 498w,
-                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_683.webp 683w,
-                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_897.webp 897w,
-                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1104.webp 1104w,
-                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1291.webp 1291w,
-                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1294.webp 1294w,
-                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1381.webp 1381w,
-                            ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1400.webp 1400w"
-                            alt="Inicio da Borondi Custom">
+        <div class="menuMobileFundo"></div>
 
-                            <img src="./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1400.webp" 
-                            sizes="(min-width: 1280px) 21.98vw, 66.04vw"
-                            srcset="
-                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_200.webp 200w,
-                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_524.webp 524w,
-                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1020.webp 1020w,
-                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_996.webp 996w,
-                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1099.webp 1099w,
-                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1384.webp 1384w,
-                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1398.webp 1398w,
-                            ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1400.webp 1400w"
-                            alt="Inicio da Borondi Custom">
-                        </div>
+        <div class="menuMobilePainel" id="menuMobilePainel">
+          <div class="menuMobileTopo">
+            <img
+              src="./src/assets/logo/logo-200.webp"
+              alt="Logotipo Borondi Custom"
+            />
+            <button class="menuMobileFechar" aria-label="Fechar menu">
+              <i class="fas fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
 
-                        <button class="certificates"> <a href="./certificacoes.html"> VER CERTIFICAÇÕES </a> </button>
-                    </div>
-                </div>
-            </section>
+          <ul>
+            <li>
+              <a href="#home"
+                ><i class="fas fa-house" aria-hidden="true"></i>Home</a
+              >
+            </li>
+            <li>
+              <a href="#customizacao"
+                ><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i>Customização</a
+              >
+            </li>
+            <li>
+              <a href="#revisao"
+                ><i class="fas fa-gauge-high" aria-hidden="true"></i>Revisão</a
+              >
+            </li>
+            <li>
+              <a href="#produtos"
+                ><i class="fas fa-motorcycle" aria-hidden="true"></i>Catálogo</a
+              >
+            </li>
+            <li>
+              <a href="#quemSomos"
+                ><i class="fas fa-users" aria-hidden="true"></i>Quem Somos</a
+              >
+            </li>
+            <li>
+              <a href="#contato"
+                ><i class="fas fa-phone" aria-hidden="true"></i>Contato</a
+              >
+            </li>
+          </ul>
 
-            <!-- Produtos --> 
-            <section id="produtos" class="produtosContainer">
-                <div class="headerProdutos reveal">
-                    <h1>CATÁLOGO</h1>
-                    <h2>Conheça os nossos produtos!</h2>
-                    <p>Temos uma variedade de modelos à sua disposição.</p>
-                </div>
-
-                <div class="produtos reveal">
-
-                </div>
-            </section>
-
-            <!-- Contato --> 
-            <section id="contato" class="contatoContainer">
-                <div class="contato">
-                    <div class="headerContato reveal">
-                        <h1>CONTATO</h1>
-                        <h2>Fale com a gente!</h2>
-                        <div class="fone">
-                            <a target="_blank" href="https://wa.me/5191353965?text=Olá, gostaria de entrar em contato sobre...">
-                                <img src="./src/assets/whatsapp.webp" alt="Ícone do aplicativo Whatsapp"/>
-                            </a>
-                            <p>(51) 99135-3965</p>
-                        </div>
-                        <p class="labelWarning">Atendimento presencial somente com hora marcada.</p>
-                        <p class="location">Canoas/RS</p>
-                    </div>
-
-                    <div class="redesContato reveal">
-                        <img  
-                        sizes="(min-width: 1980px) 200px, (min-width: 1020px) calc(9.89vw + 6px), (min-width: 820px) calc(15.56vw - 9px), (min-width: 660px) calc(18.57vw - 8px), (min-width: 520px) calc(20vw - 10px), (min-width: 480px) 200px, calc(38.13vw + 25px)"
-                        srcset="
-                        ./src/assets/logo/logo_kvsdvh_c_scale,w_200.webp 200w,
-                        ./src/assets/logo/logo_kvsdvh_c_scale,w_485.webp 485w,
-                        ./src/assets/logo/logo_kvsdvh_c_scale,w_688.webp 688w,
-                        ./src/assets/logo/logo_kvsdvh_c_scale,w_857.webp 857w,
-                        ./src/assets/logo/logo_kvsdvh_c_scale,w_1010.webp 1010w,
-                        ./src/assets/logo/logo_kvsdvh_c_scale,w_1222.webp 1222w,
-                        ./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp 1400w"
-                        src="./src/assets/logo/logo_kvsdvh_c_scale,w_1400.webp"
-                        alt="Logotipo da Borondi Custom">
-                        <p>Nos acompanhe nas redes sociais!</p>
-                        <div class="redesContatoImg">
-                            <a target="_blank" href="https://www.instagram.com/borondicustom"><img src="./src/assets/instagram.webp" alt="Ícone do Instagram"></a>
-                            <a target="_blank" href="https://www.facebook.com/marketplace/profile/100084525154113/"><img src="./src/assets/facebook.webp" alt="Ícone do Facebook"></a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!-- Rodapé --> 
-        <footer>
-            <p>© <label class="year"></label>. Todos os direitos reservados.</p>
-        </footer>
-
-        <!-- Ícone de seta flutuante para âncoragem --> 
-        <div class="downArrow scroll">
-            <a href="#quemSomos"> <img src="./src/assets/down.webp" alt="Seta de navegação baixo"> </a>
+          <a
+            class="menuMobileWhats"
+            target="_blank"
+            href="https://wa.me/5551991353965?text=Olá, gostaria de entrar em contato sobre..."
+          >
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            Fale no WhatsApp
+          </a>
         </div>
+      </div>
+    </nav>
 
-        <div class="upArrow scroll">
-            <a href="#home"> <img src="./src/assets/up.webp" alt="Seta de navegação cima"> </a>
+    <main>
+      <!-- Home -->
+      <section class="home">
+        <div class="cardDestaque">
+          <img
+            fetchpriority="high"
+            data-responsive="true"
+            sizes="(min-width: 540px) 400px, (min-width: 340px) calc(71.11vw + 30px), calc(-220vw + 960px)"
+            srcset="
+              ./src/assets/logo/logo-200.webp   200w,
+              ./src/assets/logo/logo-485.webp   485w,
+              ./src/assets/logo/logo-688.webp   688w,
+              ./src/assets/logo/logo-857.webp   857w,
+              ./src/assets/logo/logo-1010.webp 1010w,
+              ./src/assets/logo/logo-1222.webp 1222w,
+              ./src/assets/logo/logo-1400.webp 1400w
+            "
+            src="./src/assets/logo/logo-1400.webp"
+            alt="Logotipo Borondi Custom"
+          />
+          <p>Borondi Custom</p>
+          <h1>Customização, revisão, revenda de motos e outros serviços</h1>
+          <button><a href="#customizacao">EXPLORE NOSSOS SERVIÇOS</a></button>
         </div>
+      </section>
 
-        <!-- Barra de redes sociais flutuantes -->
-        <div class="floating-bar">
-            <a href="https://wa.me/5191353965?text=Olá, gostaria de entrar em contato sobre..." aria-label="Whatsapp" target="_blank" class="whats">
+      <!-- Customização -->
+      <section id="customizacao" class="customizacaoContainer">
+        <div class="servico">
+          <div class="headerServico reveal">
+            <h1>CUSTOMIZAÇÃO</h1>
+            <h2>
+              Trabalhamos desde mudanças pontuais até projetos completos, sempre
+              a partir da sua ideia.
+            </h2>
+            <p>
+              Às vezes, uma pequena mudança já faz uma grande diferença: um
+              visual mais agressivo, mais clássico ou mais confortável. A
+              customização pode começar nos detalhes.
+            </p>
+          </div>
+
+          <div class="servicoBloco reveal">
+            <h3>O que fazemos</h3>
+            <ul class="servicoCards">
+              <li class="servicoCard">
+                <span class="servicoIcone"
+                  ><i class="fas fa-wrench" aria-hidden="true"></i
+                ></span>
+                <p>Troca de guidão, escapamento, etc.</p>
+              </li>
+              <li class="servicoCard">
+                <span class="servicoIcone"
+                  ><i class="fas fa-palette" aria-hidden="true"></i
+                ></span>
+                <p>Modificações estéticas</p>
+              </li>
+              <li class="servicoCard">
+                <span class="servicoIcone"
+                  ><i class="fas fa-puzzle-piece" aria-hidden="true"></i
+                ></span>
+                <p>Instalação e substituição de acessórios</p>
+              </li>
+              <li class="servicoCard">
+                <span class="servicoIcone"
+                  ><i class="fas fa-gears" aria-hidden="true"></i
+                ></span>
+                <p>Alterações de componentes</p>
+              </li>
+              <li class="servicoCard">
+                <span class="servicoIcone"
+                  ><i class="fas fa-motorcycle" aria-hidden="true"></i
+                ></span>
+                <p>Projetos de customização completos</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="servicoDestaque reveal">
+            <span class="servicoDestaqueIcone"
+              ><i class="fas fa-fire" aria-hidden="true"></i
+            ></span>
+            <div>
+              <h3>
+                <small>Customização raiz</small>
+                Não só trocamos, criamos.
+              </h3>
+              <p>
+                Aqui não é só trocar peça por peça. Quer um escapamento
+                diferenciado? A gente projeta e cria especialmente pra você.
+                Cada projeto é desenvolvido de acordo com a sua ideia, único e
+                exclusivo.
+              </p>
+            </div>
+          </div>
+
+          <div class="servicoBloco reveal">
+            <h3>Como funciona</h3>
+            <ol class="servicoPassos">
+              <li>
+                <span class="servicoPassoIcone"
+                  ><i class="fas fa-comment-dots" aria-hidden="true"></i
+                  ><b>1</b></span
+                >
+                <h4>Conte sua ideia</h4>
+                <p>
+                  Você conta o que quer fazer, qual resultado espera e quanto
+                  pretende investir.
+                </p>
+              </li>
+              <li>
+                <span class="servicoPassoIcone"
+                  ><i class="fas fa-magnifying-glass" aria-hidden="true"></i
+                  ><b>2</b></span
+                >
+                <h4>Avaliação presencial</h4>
+                <p>
+                  Analisamos o que o projeto exige: adaptar componentes e/ou
+                  outros ajustes.
+                </p>
+              </li>
+              <li>
+                <span class="servicoPassoIcone"
+                  ><i class="fas fa-screwdriver-wrench" aria-hidden="true"></i
+                  ><b>3</b></span
+                >
+                <h4>Criamos juntos</h4>
+                <p>
+                  Desenvolvemos o projeto com você, do primeiro ajuste ao
+                  resultado final.
+                </p>
+              </li>
+            </ol>
+
+            <div class="reveal servicoAcoes">
+              <a
+                class="servicoButton"
+                target="_blank"
+                href="https://wa.me/5551991353965?text=Olá, quero customizar minha moto!"
+              >
                 <i class="fab fa-whatsapp"></i>
+                QUERO CUSTOMIZAR MINHA MOTO
+              </a>
+            </div>
+
+            <!-- Vitrine para a página /customizacao -->
+            <a class="servicoVitrine reveal" href="./customizacao.html">
+              <span class="vitrineFotos vitrineComparador" aria-hidden="true">
+                <img
+                  src="./src/images/customizacao/2/escapamento-antes-thumb.webp"
+                  alt=""
+                  loading="lazy"
+                />
+                <img
+                  class="vitrineDepois"
+                  src="./src/images/customizacao/2/escapamento-depois-thumb.webp"
+                  alt=""
+                  loading="lazy"
+                />
+                <span class="vitrineLinha"
+                  ><i class="fas fa-left-right"></i
+                ></span>
+              </span>
+              <span class="vitrineTexto">
+                <small>ANTES E DEPOIS</small>
+                <strong>Veja os projetos que já saíram da oficina</strong>
+                <span>Arraste e compare cada moto customizada.</span>
+              </span>
+              <span class="vitrineSeta" aria-hidden="true"
+                ><i class="fas fa-arrow-right"></i
+              ></span>
             </a>
-            <a href="https://www.instagram.com/borondicustom" aria-label="Instagram" target="_blank" class="instagram">
-                <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+      </section>
+
+      <!-- Revisão -->
+      <section id="revisao" class="revisaoContainer">
+        <div class="servico">
+          <div class="revisaoTopo">
+            <div class="headerServico reveal">
+              <h1>REVISÃO</h1>
+              <h2>Revisão preventiva e avaliação técnica</h2>
+              <p>
+                Atendemos motos de baixa, média e alta cilindrada, de qualquer
+                marca.
+              </p>
+              <ul class="revisaoTags">
+                <li>Baixa cilindrada</li>
+                <li>Média cilindrada</li>
+                <li>Alta cilindrada</li>
+                <li>Qualquer marca</li>
+              </ul>
+            </div>
+
+            <!-- Conta-giros ilustrativo -->
+            <div class="revisaoGauge reveal" aria-hidden="true">
+              <svg viewBox="0 0 200 120">
+                <path class="gaugeArco" d="M20 100 A80 80 0 0 1 180 100" />
+                <path class="gaugeMarcas" d="M34 100 A66 66 0 0 1 166 100" />
+                <path class="gaugeLimite" d="M165.5 54.1 A80 80 0 0 1 180 100" />
+                <g class="gaugePonteiro">
+                  <line x1="100" y1="100" x2="100" y2="34" />
+                </g>
+                <circle cx="100" cy="100" r="8" />
+              </svg>
+              <p><i class="fas fa-circle-check"></i> Tudo em ordem</p>
+            </div>
+          </div>
+
+          <div class="servicoBloco reveal">
+            <h3>Quando fazer a revisão</h3>
+            <ul class="servicoCards">
+              <li class="servicoCard">
+                <span class="servicoIcone"
+                  ><i class="fas fa-route" aria-hidden="true"></i
+                ></span>
+                <p>Antes de uma viagem</p>
+              </li>
+              <li class="servicoCard">
+                <span class="servicoIcone"
+                  ><i class="fas fa-clock-rotate-left" aria-hidden="true"></i
+                ></span>
+                <p>Quando faz tempo que a moto não passa por revisão</p>
+              </li>
+              <li class="servicoCard">
+                <span class="servicoIcone"
+                  ><i class="fas fa-key" aria-hidden="true"></i
+                ></span>
+                <p>Depois de adquirir uma moto</p>
+              </li>
+              <li class="servicoCard">
+                <span class="servicoIcone"
+                  ><i class="fas fa-calendar-check" aria-hidden="true"></i
+                ></span>
+                <p>Como acompanhamento periódico</p>
+              </li>
+              <li class="servicoCard">
+                <span class="servicoIcone"
+                  ><i class="fas fa-road" aria-hidden="true"></i
+                ></span>
+                <p>
+                  Sempre que quiser ter certeza de que está tudo em ordem antes
+                  de pegar a estrada
+                </p>
+              </li>
+            </ul>
+
+            <div class="reveal servicoAcoes">
+              <a
+                class="servicoButton"
+                target="_blank"
+                href="https://wa.me/5551991353965?text=Olá, gostaria de agendar uma revisão!"
+              >
+                <i class="fab fa-whatsapp"></i>
+                AGENDAR UMA REVISÃO
+              </a>
+            </div>
+
+            <!-- Vitrine para a página /revisao -->
+            <a class="servicoVitrine reveal" href="./revisao.html">
+              <span class="vitrineFotos vitrineLeque" aria-hidden="true">
+                <img
+                  src="./src/images/revisao/whatsapp-image-2026-08-11-at-19-50-12-1-thumb.webp"
+                  alt=""
+                  loading="lazy"
+                />
+                <img
+                  src="./src/images/revisao/whatsapp-image-2026-08-11-at-19-50-12-2-thumb.webp"
+                  alt=""
+                  loading="lazy"
+                />
+                <img
+                  src="./src/images/revisao/whatsapp-image-2026-10-29-at-15-11-07-thumb.webp"
+                  alt=""
+                  loading="lazy"
+                />
+              </span>
+              <span class="vitrineTexto">
+                <small>NA OFICINA</small>
+                <strong>Conheça a oficina e como funciona a revisão</strong>
+                <span>Passo a passo, pontos verificados e fotos da equipe.</span>
+              </span>
+              <span class="vitrineSeta" aria-hidden="true"
+                ><i class="fas fa-arrow-right"></i
+              ></span>
             </a>
-            <a href="https://www.facebook.com/marketplace/profile/100084525154113/" aria-label="Facebook" target="_blank" class="facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Produtos -->
+      <section id="produtos" class="produtosContainer">
+        <div class="headerProdutos reveal">
+          <h1>CATÁLOGO</h1>
+          <h2>Conheça os nossos produtos!</h2>
+          <p>Temos uma variedade de modelos à sua disposição.</p>
         </div>
 
-        <!-- Modelo de card para o carrossel --> 
-        <div class="model">
-            <div class="itemMoto">
-                <div class="cardBox">
-                    <button class="linkImg"><img class="motoImg" title="" alt="" src="" /></button>
-                    <p class="motoModel"></p>
-                    <button class="motoPrice"></button>
-                    <p class="motoDescription"></p>
-                    <button id="openItem" href="" onclick="openItem()" aria-label="Botão">Ver mais informações <img src="./src/assets/seta.png" alt="Seta para a direita"></button>
-                </div>
-            </div>
-        </div>
+        <div class="produtos reveal"></div>
+      </section>
 
-        <!-- Modelo para vídeo em tela cheia --> 
-        <div class="fullScreen">
-            <div class="fullScreenContainer">
-                <button id="closeModalButton" onclick="closeModal()"></button>
-                <div class="infoMoto">
-                    <div class="motoHead">
-                        <p></p>
-                        <div>
-                            <button class="productValue"></button>
-                            <a href="" class="proposalButton"> 
-                                <i class="fab fa-whatsapp"></i>
-                                Enviar proposta 
-                            </a>
-                        </div>
-                    </div>
-                    <p class="motoOther"></p>
-                    <div class="motoPictures"></div>
-                    <p class="motoText"></p>
-                    <p class="motoPayment"></p>
-                </div>
+      <!-- Quem Somos -->
+      <section id="quemSomos" class="quemSomosContainer">
+        <div class="quemSomos">
+          <div class="headerQuemSomos reveal">
+            <h1>QUEM SOMOS</h1>
+            <h2>Um pouco mais sobre nós!</h2>
+            <p>
+              Na Borondi Custom, a paixão por Harley-Davidson é mais do que um
+              negócio, é um estilo de vida.
+            </p>
+            <br />
+            <p>
+              Trabalhamos com customização, revisão e revenda de motos, para
+              acompanhar você em cada etapa da relação com a sua moto.
+            </p>
+            <br />
+            <p>
+              Desde 1999, somos certificados e homologados pela Harley-Davidson
+              Motor Company®, um selo de qualidade que reflete nosso compromisso
+              com a transparência e a procedência garantida.
+            </p>
+            <br />
+            <p>
+              Aqui, você constrói uma relação duradoura, com paixão compartilhada
+              pelo motociclismo e pela cultura custom.
+            </p>
+          </div>
+
+          <div class="reveal">
+            <div class="imagens">
+              <img
+                data-responsive="true"
+                src="./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1400.webp"
+                sizes="(min-width: 1280px) 21.98vw, 66.04vw"
+                srcset="
+                  ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_200.webp   200w,
+                  ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_498.webp   498w,
+                  ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_683.webp   683w,
+                  ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_897.webp   897w,
+                  ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1104.webp 1104w,
+                  ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1291.webp 1291w,
+                  ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1294.webp 1294w,
+                  ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1381.webp 1381w,
+                  ./src/images/borondi1/borondi1_ekk4vk_c_scale,w_1400.webp 1400w
+                "
+                alt="Inicio da Borondi Custom"
+              />
+
+              <img
+                data-responsive="true"
+                src="./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1400.webp"
+                sizes="(min-width: 1280px) 21.98vw, 66.04vw"
+                srcset="
+                  ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_200.webp   200w,
+                  ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_524.webp   524w,
+                  ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1020.webp 1020w,
+                  ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_996.webp   996w,
+                  ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1099.webp 1099w,
+                  ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1384.webp 1384w,
+                  ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1398.webp 1398w,
+                  ./src/images/borondi2/borondi2_p0pfy2_c_scale,w_1400.webp 1400w
+                "
+                alt="Inicio da Borondi Custom"
+              />
             </div>
+
+            <button class="certificates">
+              <a href="./certificacoes.html"> VER CERTIFICAÇÕES </a>
+            </button>
+          </div>
         </div>
-        
-        <!-- Scripts da página --> 
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-3.4.1.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" async></script>
-        <script type="text/javascript" src="./src/js/motos.js"></script>
-        <script type="text/javascript" src="./src/js/api.js"></script>
-        <script type="text/javascript" src="./src/js/main.js"></script>
-    </body>
+      </section>
+
+      <!-- Contato -->
+      <section id="contato" class="contatoContainer">
+        <div class="contato">
+          <div class="headerContato reveal">
+            <h1>CONTATO</h1>
+            <h2>Fale com a gente!</h2>
+            <a
+              class="fone"
+              target="_blank"
+              href="https://wa.me/5551991353965?text=Olá, gostaria de entrar em contato sobre..."
+            >
+              <img
+                src="./src/assets/whatsapp.webp"
+                alt="Ícone do aplicativo Whatsapp"
+              />
+              <p>(51) 99135-3965</p>
+            </a>
+            <p class="labelWarning">
+              Atendimento presencial somente com hora marcada.
+            </p>
+            <p class="location">
+              <a
+                target="_blank"
+                href="https://www.google.com/maps/search/?api=1&query=R.+Berto+C%C3%ADrio%2C+329+-+S%C3%A3o+Lu%C3%ADs%2C+Canoas+-+RS%2C+92420-030"
+                >R. Berto Círio, 329 - São Luís, Canoas - RS, 92420-030</a
+              >
+            </p>
+          </div>
+
+          <div class="redesContato reveal">
+            <img
+              data-responsive="true"
+              sizes="(min-width: 1980px) 200px, (min-width: 1020px) calc(9.89vw + 6px), (min-width: 820px) calc(15.56vw - 9px), (min-width: 660px) calc(18.57vw - 8px), (min-width: 520px) calc(20vw - 10px), (min-width: 480px) 200px, calc(38.13vw + 25px)"
+              srcset="
+                ./src/assets/logo/logo-200.webp   200w,
+                ./src/assets/logo/logo-485.webp   485w,
+                ./src/assets/logo/logo-688.webp   688w,
+                ./src/assets/logo/logo-857.webp   857w,
+                ./src/assets/logo/logo-1010.webp 1010w,
+                ./src/assets/logo/logo-1222.webp 1222w,
+                ./src/assets/logo/logo-1400.webp 1400w
+              "
+              src="./src/assets/logo/logo-1400.webp"
+              alt="Logotipo da Borondi Custom"
+            />
+            <p>Nos acompanhe nas redes sociais!</p>
+            <div class="redesContatoImg">
+              <a target="_blank" href="https://www.instagram.com/borondicustom"
+                ><img
+                  src="./src/assets/instagram.webp"
+                  alt="Ícone do Instagram"
+              /></a>
+              <a
+                target="_blank"
+                href="https://www.facebook.com/borondicustom"
+                ><img src="./src/assets/facebook.webp" alt="Ícone do Facebook"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+      <p>© <label class="year"></label>. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Botão flutuante para voltar ao topo -->
+    <a href="#home" class="voltarTopo" aria-label="Voltar ao topo">
+      <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </a>
+
+    <!-- Barra de redes sociais flutuantes -->
+    <div class="floating-bar">
+      <a
+        href="https://wa.me/5551991353965?text=Olá, gostaria de entrar em contato sobre..."
+        aria-label="Whatsapp"
+        target="_blank"
+        class="whats"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a
+        href="https://www.instagram.com/borondicustom"
+        aria-label="Instagram"
+        target="_blank"
+        class="instagram"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a
+        href="https://www.facebook.com/borondicustom"
+        aria-label="Facebook"
+        target="_blank"
+        class="facebook"
+      >
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </div>
+
+    <!-- Modelo de card para o carrossel -->
+    <div class="model">
+      <div class="itemMoto">
+        <!-- api.js usa a 1ª <img> e o 1º <button> dentro de um div:
+             manter a foto e o .linkImg antes dos demais -->
+        <div class="cardBox">
+          <div class="cardFoto">
+            <button
+              class="linkImg"
+              aria-label="Abrir galeria de fotos da moto"
+            >
+              <img class="motoImg" title="" alt="Foto da motocicleta" src="" />
+            </button>
+            <!-- Preço vira etiqueta sobre a foto; na vendida, faixa "VENDIDO" -->
+            <button
+              class="motoPrice"
+              aria-label="Preço da motocicleta"
+            ></button>
+          </div>
+          <div class="cardInfo">
+            <p class="motoModel"></p>
+            <p class="motoDescription"></p>
+            <button
+              id="openItem"
+              href=""
+              onclick="openItem()"
+              aria-label="Ver detalhes completos da motocicleta"
+            >
+              Detalhes completos
+              <img src="./src/assets/seta.png" alt="Seta para a direita" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modelo para vídeo em tela cheia -->
+    <div class="fullScreen">
+      <div class="fullScreenContainer">
+        <button
+          id="closeModalButton"
+          onclick="closeModal()"
+          aria-label="Fechar modal de detalhes"
+        ></button>
+        <div class="infoMoto">
+          <!-- Título e km à esquerda; preço e proposta à direita.
+               main.js usa o 1º <p> e o 1º <button> de .motoHead -->
+          <div class="motoHead">
+            <div class="motoTitulo">
+              <p></p>
+              <p class="motoOther"></p>
+            </div>
+            <div class="motoAcoes">
+              <button
+                class="productValue"
+                aria-label="Preço da motocicleta"
+              ></button>
+              <a href="" class="proposalButton">
+                <i class="fab fa-whatsapp"></i>
+                Fazer uma proposta
+              </a>
+            </div>
+          </div>
+
+          <div class="motoPictures"></div>
+
+          <div class="motoDetalhes">
+            <div class="motoCard">
+              <h3>
+                <i class="fas fa-star" aria-hidden="true"></i>
+                Destaques
+              </h3>
+              <p class="motoText"></p>
+            </div>
+            <div class="motoCard motoCardPagamento">
+              <h3>
+                <i class="fas fa-credit-card" aria-hidden="true"></i>
+                Condições de pagamento
+              </h3>
+              <p class="motoPayment"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts da página - Ordem otimizada para performance -->
+    <!-- jQuery e dependências sem defer para garantir disponibilidade -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Scripts próprios com defer -->
+    <script defer src="./src/js/motos.js"></script>
+    <script defer src="./src/js/api.js"></script>
+    <script defer src="./src/js/main.min.js"></script>
+  </body>
 </html>

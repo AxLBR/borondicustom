@@ -1,0 +1,1182 @@
+/* PÁGINAS /customizacao E /revisao
+   Complementa o style.css (cores, botões .servicoButton, cards .servicoCard
+   e animações .reveal são reaproveitados de lá) */
+
+/* Link da página atual no menu */
+.menu a.ativo,
+.menuMobilePainel li a.ativo {
+  color: #d65200;
+}
+
+.menuMobilePainel li a.ativo {
+  border-left-color: #d65200;
+}
+
+/* TOPO (HERO) */
+.paginaHero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: min(78vh, 680px);
+  padding: 90px 0 90px;
+  overflow: hidden;
+  background-color: #1c1c1c;
+  color: #f9f9f9;
+}
+
+/* Foto do topo com zoom lento (efeito Ken Burns). É um <img> no HTML:
+   url() relativa dentro de variável CSS seria resolvida a partir do .css */
+.paginaHeroImagem {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: heroZoom 14s ease-out forwards;
+}
+
+/* Escurece a foto e dissolve na cor da próxima seção */
+.paginaHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(28, 28, 28, 0.9) 0%,
+      rgba(28, 28, 28, 0.6) 50%,
+      rgba(28, 28, 28, 0.25) 100%
+    ),
+    linear-gradient(180deg, transparent 55%, #282828 100%);
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.15);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.paginaHeroConteudo {
+  position: relative;
+  z-index: 1;
+  width: 66%;
+  margin: 0 auto;
+}
+
+/* Elementos do topo entram em sequência */
+.paginaHeroConteudo > * {
+  opacity: 0;
+  animation: subir 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.paginaHeroConteudo > :nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.paginaHeroConteudo > :nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.paginaHeroConteudo > :nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+.paginaHeroConteudo > :nth-child(5) {
+  animation-delay: 0.6s;
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.paginaTrilha {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  font-size: 0.9em;
+  list-style: none;
+}
+
+.paginaTrilha a {
+  color: #f9f9f9;
+  opacity: 0.7;
+  text-decoration: none;
+  transition: opacity 0.3s, color 0.3s;
+}
+
+.paginaTrilha a:hover {
+  color: #d65200;
+  opacity: 1;
+}
+
+.paginaTrilha li + li::before {
+  content: "\f054";
+  margin-right: 10px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.7em;
+  color: #d65200;
+}
+
+.paginaHero .paginaRotulo {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #d65200;
+  font-size: 1em;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.paginaHero h1 {
+  max-width: 760px;
+  margin-bottom: 20px;
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+.paginaHero h1 span {
+  color: #d65200;
+}
+
+.paginaHero p {
+  max-width: 620px;
+  margin-bottom: 35px;
+  font-size: 1.3em;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+.paginaHeroAcoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.paginaHeroAcoes .servicoButton {
+  margin-top: 0;
+}
+
+.botaoSecundario {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 16px 22px;
+  border: 1px solid rgba(249, 249, 249, 0.4);
+  color: #f9f9f9;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    border-color 0.3s,
+    color 0.3s;
+}
+
+.botaoSecundario:hover {
+  border-color: #d65200;
+  color: #d65200;
+}
+
+.botaoSecundario i {
+  animation: quicar 1.8s ease-in-out infinite;
+}
+
+@keyframes quicar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* SEÇÕES */
+.paginaSecao {
+  position: relative;
+  padding: 70px 0;
+  overflow: hidden;
+  background-color: #282828;
+  color: #f9f9f9;
+}
+
+.paginaSecao.comPattern {
+  background-image: url(../assets/pattern1.svg);
+  background-size: 400px 400px;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+}
+
+.paginaSecao.escura {
+  background-color: #1c1c1c;
+}
+
+.paginaSecao .servico {
+  padding: 0;
+}
+
+/* CUSTOMIZAÇÃO: projetos com antes e depois */
+.listaProjetos {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+}
+
+/* "Como funciona" depois do último projeto: mesmo respiro entre projetos */
+.listaProjetos + .servicoBloco {
+  margin-top: 45px;
+}
+
+.projeto {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Projetos pares invertem o lado da foto */
+.projeto:nth-child(even) .comparador {
+  order: 2;
+}
+
+.projetoNumero {
+  display: block;
+  margin-bottom: 5px;
+  color: transparent;
+  font-size: 4.5em;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-text-stroke: 2px #d65200;
+  opacity: 0.8;
+}
+
+.projetoInfo h3 {
+  margin-bottom: 10px;
+  font-size: 1.8em;
+  line-height: 1.2;
+}
+
+.projetoCategoria {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 5px 14px;
+  border: 1px solid #d65200;
+  border-radius: 999px;
+  color: #d65200;
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.projetoDescricao {
+  margin-bottom: 22px;
+  font-size: 1.15em;
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.projetoSubtitulo {
+  margin-bottom: 12px;
+  color: #d65200;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Listas longas de modificações em duas colunas */
+.revisaoChecklist.checklistDupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 20px;
+}
+
+.projetoAcoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-top: 28px;
+}
+
+.projetoAcoes .servicoButton {
+  margin-top: 0;
+}
+
+/* "Ver o processo": miniaturas sobrepostas + texto */
+.botaoProcesso {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 6px 20px 6px 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  background: none;
+  color: #f9f9f9;
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    border-color 0.3s,
+    background-color 0.3s;
+}
+
+.botaoProcesso small {
+  color: #d65200;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.botaoProcessoFotos {
+  display: flex;
+}
+
+.botaoProcessoFotos img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #282828;
+  object-fit: cover;
+  transition: margin 0.3s;
+}
+
+.botaoProcessoFotos img + img {
+  margin-left: -12px;
+}
+
+.botaoProcesso:hover {
+  border-color: #d65200;
+  background-color: rgba(214, 82, 0, 0.12);
+}
+
+.botaoProcesso:hover .botaoProcessoFotos img + img {
+  margin-left: -4px;
+}
+
+/* Comparador antes/depois: cada camada (foto + rótulo) é recortada no seu
+   lado da linha (--pos), então o rótulo some junto com a foto, como uma
+   máscara; o input range invisível cobre tudo e controla a posição */
+@property --pos {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
+
+.comparador {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  border: 1px solid rgba(249, 249, 249, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  user-select: none;
+}
+
+.comparador img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Projeto com uma foto só: sem linha nem arraste */
+.comparadorUnico img {
+  position: absolute;
+  inset: 0;
+}
+
+.comparadorCamada {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.comparadorCamadaDepois {
+  clip-path: inset(0 0 0 var(--pos));
+}
+
+.comparadorCamadaAntes {
+  clip-path: inset(0 calc(100% - var(--pos)) 0 0);
+}
+
+.comparadorCamadaAntes img {
+  filter: grayscale(0.4);
+}
+
+.comparadorRotulo {
+  position: absolute;
+  top: 16px;
+  z-index: 2;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background-color: rgba(28, 28, 28, 0.75);
+  backdrop-filter: blur(4px);
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.comparadorRotuloAntes {
+  left: 16px;
+}
+
+.comparadorRotuloDepois {
+  right: 16px;
+  background-color: #d65200;
+}
+
+.comparadorLinha {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--pos);
+  z-index: 2;
+  width: 3px;
+  background-color: #f9f9f9;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.comparadorAlca {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 3px solid #f9f9f9;
+  background-color: #d65200;
+  color: #f9f9f9;
+  font-size: 1.1em;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s;
+}
+
+.comparador:hover .comparadorAlca {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.comparador input {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.comparador:has(input:focus-visible) .comparadorAlca {
+  outline: 3px solid #f9f9f9;
+  outline-offset: 3px;
+}
+
+/* Dica de interação: a linha vai e volta quando o projeto aparece */
+.projeto.reveal.active .comparador:not(.tocado) {
+  animation: dicaComparador 1.8s ease-in-out 0.6s;
+}
+
+@keyframes dicaComparador {
+  0%,
+  100% {
+    --pos: 50%;
+  }
+  30% {
+    --pos: 25%;
+  }
+  70% {
+    --pos: 75%;
+  }
+}
+
+/* REVISÃO: linha do tempo com 4 passos (base .servicoPassos do style.css) */
+.servicoPassos.servicoPassos4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.servicoPassos4::before {
+  left: 12.5%;
+  right: 12.5%;
+}
+
+.reveal.active .servicoPassos4 li:nth-child(4) {
+  transition-delay: 1.5s;
+}
+
+/* REVISÃO: "Na oficina" = texto convidando a agendar + fotos em movimento */
+.oficina {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.oficinaMotivos {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 35px 0;
+  list-style: none;
+}
+
+.oficinaMotivos li {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.oficinaMotivos .servicoIcone {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  margin: 0 4px;
+  font-size: 1.15em;
+}
+
+.oficinaMotivos strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 1.15em;
+}
+
+.oficinaMotivos p {
+  font-weight: 300;
+  opacity: 0.75;
+}
+
+.oficinaAcoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px 25px;
+}
+
+.oficinaAcoes .servicoButton {
+  margin-top: 0;
+}
+
+.oficinaNota {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95em;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.oficinaNota i {
+  color: #d65200;
+}
+
+/* Duas colunas rolando em sentidos opostos; bordas esmaecidas pela máscara */
+.oficinaFotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  height: 640px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  mask-image: linear-gradient(transparent, #000 12%, #000 88%, transparent);
+}
+
+.oficinaColuna {
+  overflow: hidden;
+}
+
+/* O trilho tem as fotos duas vezes: subir 50% volta ao início sem emenda.
+   Por isso o espaçamento é margin (e não gap), igual nas duas metades */
+.oficinaTrilho {
+  display: flex;
+  flex-direction: column;
+  animation: oficinaSubir 38s linear infinite;
+}
+
+.oficinaColuna:nth-child(2) .oficinaTrilho {
+  animation-name: oficinaDescer;
+  animation-duration: 30s;
+}
+
+.oficinaFotos:hover .oficinaTrilho {
+  animation-play-state: paused;
+}
+
+@keyframes oficinaSubir {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes oficinaDescer {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.oficinaFoto {
+  position: relative;
+  flex-shrink: 0;
+  margin: 0 0 16px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(249, 249, 249, 0.08);
+}
+
+.oficinaFoto img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.oficinaFoto:hover img {
+  transform: scale(1.06);
+}
+
+.oficinaFoto figcaption {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: rgba(28, 28, 28, 0.85);
+  backdrop-filter: blur(4px);
+  color: #f9f9f9;
+  font-size: 0.85em;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Lista com ícone de check (projetos e galeria) */
+.revisaoChecklist {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+}
+
+.revisaoChecklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95em;
+}
+
+.revisaoChecklist i {
+  margin-top: 3px;
+  color: #d65200;
+}
+
+/* Galeria em tela cheia (dialog) */
+.galeria {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 24px;
+  border: 0;
+  background: transparent;
+  color: #f9f9f9;
+}
+
+.galeria[open] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: modalFundo 0.3s ease;
+}
+
+.galeria::backdrop {
+  background-color: rgba(12, 12, 12, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.galeriaConteudo {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 18px 30px;
+  width: 100%;
+  max-width: 1150px;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(249, 249, 249, 0.08);
+  border-top: 3px solid #d65200;
+  background-color: #1c1c1c;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  animation: modalEntrada 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.galeriaFechar {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(249, 249, 249, 0.15);
+  background-color: rgba(28, 28, 28, 0.8);
+  color: #f9f9f9;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.galeriaFechar:hover {
+  background-color: #d65200;
+  border-color: #d65200;
+}
+
+.galeriaPalco {
+  position: relative;
+  grid-row: 1;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: #282828;
+  touch-action: pan-y;
+}
+
+.galeriaImagem {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  max-height: calc(100dvh - 220px);
+  object-fit: contain;
+  transition: opacity 0.15s;
+}
+
+.galeriaImagem.trocando {
+  opacity: 0;
+}
+
+.galeriaSeta {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(249, 249, 249, 0.12);
+  background-color: rgba(28, 28, 28, 0.85);
+  color: #d65200;
+  font-size: 1.1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.galeriaSeta:hover {
+  background-color: #d65200;
+  color: #f9f9f9;
+}
+
+.galeriaAnterior {
+  left: 12px;
+}
+
+.galeriaProxima {
+  right: 12px;
+}
+
+.galeriaContador {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background-color: rgba(28, 28, 28, 0.8);
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.galeriaLegenda {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 70px;
+  width: fit-content;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background-color: rgba(28, 28, 28, 0.85);
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.galeriaLegenda:empty {
+  display: none;
+}
+
+.galeriaMiniaturas {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.galeriaMiniaturas button {
+  flex: 0 0 72px;
+  height: 72px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background: none;
+  opacity: 0.5;
+  cursor: pointer;
+  transition:
+    opacity 0.3s,
+    border-color 0.3s;
+}
+
+.galeriaMiniaturas button:hover,
+.galeriaMiniaturas button.ativa {
+  opacity: 1;
+}
+
+.galeriaMiniaturas button.ativa {
+  border-color: #d65200;
+}
+
+.galeriaMiniaturas img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galeria.fotoUnica .galeriaSeta,
+.galeria.fotoUnica .galeriaMiniaturas,
+.galeria.fotoUnica .galeriaContador {
+  display: none;
+}
+
+.galeriaInfo {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-top: 40px;
+}
+
+.galeriaInfo .paginaRotulo {
+  color: #d65200;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.galeriaInfo h3 {
+  font-size: 1.6em;
+  line-height: 1.2;
+}
+
+.galeriaInfo p {
+  font-weight: 300;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.galeriaInfo .servicoButton {
+  margin-top: auto;
+  justify-content: center;
+}
+
+/* CHAMADA FINAL */
+.paginaChamada {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 50px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #d65200, #8f3700);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Ícone grande decorativo ao fundo */
+.paginaChamada::before {
+  content: var(--chamada-icone);
+  position: absolute;
+  right: 30%;
+  bottom: -60px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 14rem;
+  color: rgba(0, 0, 0, 0.12);
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+.paginaChamada > * {
+  position: relative;
+}
+
+.paginaChamada h2 {
+  margin-bottom: 8px;
+  font-size: 2em;
+  line-height: 1.2;
+}
+
+.paginaChamada p {
+  font-size: 1.15em;
+  font-weight: 300;
+}
+
+.paginaChamada .servicoButton {
+  flex-shrink: 0;
+  margin-top: 0;
+  background-color: #f9f9f9;
+  color: #1c1c1c;
+  animation: none;
+}
+
+.paginaChamada .servicoButton:hover {
+  background-color: #1c1c1c;
+  color: #f9f9f9;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1100px) {
+  .revisaoChecklist.checklistDupla {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .paginaHeroConteudo {
+    width: 85%;
+  }
+
+  .servicoPassos.servicoPassos4 {
+    grid-template-columns: 1fr;
+  }
+
+  .oficina {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Fotos em duas faixas horizontais rolando em sentidos opostos */
+  .oficinaFotos {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 12px;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 10%,
+      #000 90%,
+      transparent
+    );
+    mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  }
+
+  .oficinaTrilho {
+    flex-direction: row;
+    width: max-content;
+    animation-name: oficinaEsquerda;
+  }
+
+  .oficinaColuna:nth-child(2) .oficinaTrilho {
+    animation-name: oficinaDireita;
+  }
+
+  .oficinaFoto {
+    width: 190px;
+    margin: 0 12px 0 0;
+  }
+
+  @keyframes oficinaEsquerda {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes oficinaDireita {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  /* Texto ocupa a largura toda: escurece a foto por igual */
+  .paginaHero::after {
+    background:
+      linear-gradient(rgba(28, 28, 28, 0.78), rgba(28, 28, 28, 0.78)),
+      linear-gradient(180deg, transparent 55%, #282828 100%);
+  }
+
+  .paginaHero h1 {
+    font-size: 2.4em;
+  }
+
+  .projeto {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .projeto:nth-child(even) .comparador {
+    order: 0;
+  }
+
+  .galeriaConteudo {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 20px;
+  }
+
+  .galeriaPalco,
+  .galeriaMiniaturas,
+  .galeriaInfo {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .galeriaInfo {
+    padding-top: 0;
+  }
+
+  .galeriaImagem {
+    max-height: 55dvh;
+  }
+
+  .paginaChamada {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 35px;
+  }
+
+  .paginaChamada .servicoButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .projetoAcoes > * {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .paginaHeroConteudo {
+    width: 85%;
+  }
+
+  .paginaHero {
+    padding: 70px 0 60px;
+  }
+
+  .paginaHero h1 {
+    font-size: 2em;
+  }
+
+  .paginaHero p {
+    font-size: 1.1em;
+  }
+
+  .paginaHeroAcoes > * {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .projetoNumero {
+    font-size: 3.5em;
+  }
+
+  .comparadorAlca {
+    width: 44px;
+    height: 44px;
+  }
+
+  .galeria {
+    padding: 12px;
+  }
+
+  .galeriaSeta {
+    display: none;
+  }
+
+  .paginaChamada {
+    padding: 28px 22px;
+  }
+
+  .paginaChamada h2 {
+    font-size: 1.6em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paginaHeroImagem,
+  .paginaHeroConteudo > *,
+  .projeto.reveal.active .comparador,
+  .oficinaTrilho,
+  .botaoSecundario i {
+    animation: none;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "name": "Borondi Custom - Loja de Motos",
+  "short_name": "Borondi Custom",
+  "description": "Loja de motos localizada em Canoas/RS, especializada em Harley-Davidson desde 1999! Atendimento presencial com hora marcada.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f9f9f9",
+  "theme_color": "#1c1c1c",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "./src/assets/logo/logo-200.webp",
+      "sizes": "200x148",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "./src/assets/logo/logo-485.webp",
+      "sizes": "485x360",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "./src/assets/logo/logo-1400.webp",
+      "sizes": "1400x1038",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "./src/favicons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./src/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./src/favicons/android-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "shopping"],
+  "screenshots": [
+    {
+      "src": "./src/assets/logo/logo-1400.webp",
+      "sizes": "1400x1038",
+      "type": "image/webp",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ver Catálogo",
+      "short_name": "Catálogo",
+      "description": "Visualizar todas as motos disponíveis",
+      "url": "/#produtos",
+      "icons": [
+        {
+          "src": "./src/favicons/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Fale Conosco",
+      "short_name": "Contato",
+      "description": "Entre em contato via WhatsApp",
+      "url": "/#contato",
+      "icons": [
+        {
+          "src": "./src/favicons/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}

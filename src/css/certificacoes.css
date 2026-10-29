@@ -27,7 +27,7 @@
 
 .imagens div img {
   margin-bottom: 0;
-  border: 20px solid white;
+  border: 20px solid #f9f9f9;
   border-bottom: 0;
   margin-bottom: 0 !important;
 }
@@ -35,14 +35,13 @@
 .imagens div p {
   padding: 20px;
   padding-bottom: 15px;
-  background-color: white;
+  background-color: #f9f9f9;
   width: 100%;
   text-align: center;
 }
 
 .contatoContainer {
-  background-image: url(../assets/ponto.svg);
-  background-color: #373636;
+  background-color: #282828;
 }
 
 .labelWarning {

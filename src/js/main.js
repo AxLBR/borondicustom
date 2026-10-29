@@ -1,55 +1,39 @@
 //Controlador do menuMobile
-document.addEventListener('DOMContentLoaded', () => {
-  const menuIcon = document.querySelector('.menuMobile > ul > li > img');
-  const dropdownMenu = document.querySelector('.menuMobile ul ul');
-  
-  menuIcon.addEventListener('click', () => {
-      dropdownMenu.classList.toggle('open');
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  const menuMobile = document.querySelector(".menuMobile");
+  const botaoAbrir = menuMobile.querySelector(".menuMobileBotao");
 
-  document.addEventListener('click', (e) => {
-      if (!menuIcon.contains(e.target) && !dropdownMenu.contains(e.target)) {
-          dropdownMenu.classList.remove('open');
-      }
-  });
+  function toggleMenu(aberto) {
+    menuMobile.classList.toggle("aberto", aberto);
+    botaoAbrir.setAttribute("aria-expanded", aberto);
+  }
 
-  dropdownMenu.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-          dropdownMenu.classList.remove('open');
-          isDropdownOpen = false;
-      });
+  botaoAbrir.addEventListener("click", () => toggleMenu(true));
+
+  // Fecha ao clicar no X, fora da gaveta ou em qualquer link
+  menuMobile
+    .querySelectorAll(".menuMobileFechar, .menuMobileFundo, .menuMobilePainel a")
+    .forEach((el) => el.addEventListener("click", () => toggleMenu(false)));
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") toggleMenu(false);
   });
 });
 
-// Função para pré-carregar imagens
-function preloadImagesForMoto(motoId) {
-  let index = 1;
-  let imgSrc = `./src/images/motos/${motoId}/${index}.webp`;
-
-  const checkImages = () => {
-      const img = new Image();
-      img.src = imgSrc;
-      img.onload = () => {
-          // Incrementa o índice para verificar a próxima imagem
-          index++;
-          imgSrc = `./src/images/motos/${motoId}/${index}.webp`;
-          checkImages(); // Continua carregando as próximas imagens
-      };
-      img.onerror = () => {
-          // Finaliza o loop quando não há mais imagens
-          console.log(`Pré-carregamento de imagens da moto ${motoId} concluído.`);
-      };
+// Função para gerar URLs de imagens em múltiplos tamanhos
+function getImageSrcSet(motoId, imageNumber) {
+  const basePath = `./src/images/motos/${motoId}/optimized/${imageNumber}`;
+  return {
+    thumb: `${basePath}-thumb.webp`,
+    medium: `${basePath}-medium.webp`,
   };
-
-  checkImages();
 }
 
-// Pré-carregar imagens ao carregar a página
-document.addEventListener('DOMContentLoaded', () => {
-  reverseMotosJson.forEach(moto => {
-      preloadImagesForMoto(moto.id);
-  });
-});
+// Função para gerar srcset responsivo
+function generateSrcSet(motoId, imageNumber) {
+  const urls = getImageSrcSet(motoId, imageNumber);
+  return `${urls.thumb} 300w, ${urls.medium} 454w`;
+}
 
 // Abre moto na modal
 function openItem(key) {
@@ -59,90 +43,144 @@ function openItem(key) {
   let moto;
 
   reverseMotosJson.map((item) => {
-      if (item.id == key) {
-          moto = item;
-      }
+    if (item.id == key) {
+      moto = item;
+    }
+  });
+
+  // Enviar dados para o Google Tag Manager
+  window.dataLayer = window.dataLayer || [];
+  const kmsValue = moto.kms.match(/\d+/)
+    ? moto.kms.match(/\d+/)[0] + "km"
+    : "sem-info";
+  window.dataLayer.push({
+    event: "product_click",
+    ecommerce: {
+      items: [
+        {
+          item_id: `${moto.model.replace(/\s+/g, "-")}-${moto.year}-${kmsValue}`,
+          item_name: `${moto.model} (${moto.year})`,
+          item_category: "Motos",
+          item_variant: moto.year,
+          price: parseFloat(moto.price),
+          quantity: 1,
+        },
+      ],
+    },
+    // Dados adicionais para análise customizada
+    product_slot_id: moto.id,
+    product_model: moto.model,
+    product_year: moto.year,
+    product_kms: moto.kms,
+    product_status: moto.sell,
   });
 
   let newPrice = moto.price
-      .toString()
-      .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
+    .toString()
+    .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.");
 
   document.querySelector(".motoHead p").innerHTML =
-      moto.model + " (" + moto.year + ")";
+    moto.model + " (" + moto.year + ")";
 
   if (moto.sell == "yes") {
-      document.querySelector(".motoHead button").textContent = "VENDIDO";
-      document.querySelector(".motoHead button").className = "vendido";
+    document.querySelector(".motoHead button").textContent = "VENDIDO";
+    document.querySelector(".motoHead button").className = "vendido";
   } else {
-      document.querySelector(".motoHead button").textContent = "R$" + newPrice;
+    document.querySelector(".motoHead button").textContent = "R$" + newPrice;
+    document.querySelector(".motoHead button").className = "motoPrice-modal";
   }
 
   document.querySelector(".motoOther").innerHTML = moto.kms;
   document.querySelector(".motoText").innerHTML = moto.description;
   document.querySelector(".motoPayment").innerHTML = moto.credit;
-  document.querySelector(".proposalButton").href = "https://wa.me/5191353965?text=Olá, gostaria de informações sobre a " + moto.model + ' (' + moto.year + ')';
+
+  if (moto.sell == "yes") {
+    document.querySelector(".proposalButton").style.display = "none";
+  } else {
+    document.querySelector(".proposalButton").style.display = "block";
+    const whatsappUrl =
+      "https://wa.me/5551991353965?text=Olá, gostaria de informações sobre a " +
+      moto.model +
+      " (" +
+      moto.year +
+      ")";
+    document.querySelector(".proposalButton").href = whatsappUrl;
+
+    // Adicionar evento de clique para rastreamento GTM
+    document.querySelector(".proposalButton").onclick = function () {
+      const kmsValue = moto.kms.match(/\d+/)
+        ? moto.kms.match(/\d+/)[0] + "km"
+        : "sem-info";
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "whatsapp_proposal",
+        product_id: `${moto.model.replace(/\s+/g, "-")}-${moto.year}-${kmsValue}`,
+        product_name: `${moto.model} (${moto.year})`,
+      });
+    };
+  }
 
   const imageElements = [];
-  let index = 1;
-  let imgSrc = `./src/images/motos/${key}/${index}.webp`;
-
   const motoPicturesElement = document.querySelector(".motoPictures");
 
-  // Carregar todas as imagens para o carrossel
-  const addImagesToCarousel = () => {
-      imageExists(imgSrc, (exists) => {
-          if (exists) {
-              imageElements.push(
-                  `<div class="carrosselFullscreen"><img src="${imgSrc}" title="${moto.model}" alt="Foto ${index} da ${moto.model}"/></div>`
-              );
-              index++;
-              imgSrc = `./src/images/motos/${key}/${index}.webp`;
-              addImagesToCarousel();
-          } else {
-              motoPicturesElement.innerHTML = imageElements.join("");
+  // Carregar imagens dinamicamente baseado no campo totalImages de cada moto
+  const maxImages = moto.totalImages || 5;
+  for (let i = 1; i <= maxImages; i++) {
+    const currentUrls = getImageSrcSet(key, i);
+    const srcSet = generateSrcSet(key, i);
+    const loading = i > 3 ? 'loading="lazy"' : "";
 
-              if (imageElements.length > 0) {
-                  $(motoPicturesElement).slick({
-                      dots: true,
-                      infinite: true,
-                      rows: 1,
-                      slidesToShow: 3,
-                      slidesToScroll: 3,
-                      responsive: [
-                          {
-                              breakpoint: 1660,
-                              settings: {
-                                  slidesToShow: 2,
-                                  slidesToScroll: 2,
-                              },
-                          },
-                          {
-                              breakpoint: 1015,
-                              settings: {
-                                  rows: 1,
-                                  slidesToShow: 2,
-                                  slidesToScroll: 2,
-                              },
-                          },
-                          {
-                              breakpoint: 802,
-                              settings: {
-                                  rows: 1,
-                                  slidesToShow: 1,
-                                  slidesToScroll: 1,
-                              },
-                          },
-                      ],
-                  });
-              } else {
-                  console.error("Nenhuma imagem encontrada para inicializar o slick.");
-              }
-          }
+    imageElements.push(
+      `<div class="carrosselFullscreen"><img class="moto-image" src="${currentUrls.medium}" srcset="${srcSet}" sizes="(max-width: 768px) 100vw, 454px" ${loading} decoding="async" onerror="this.parentElement.style.display='none'" onload="this.classList.add('loaded')" title="${moto.model}" alt="Foto ${i} da ${moto.model}"/></div>`,
+    );
+  }
+
+  motoPicturesElement.innerHTML = imageElements.join("");
+
+  if (imageElements.length > 0) {
+    // Verificar se jQuery e Slick estão carregados antes de inicializar
+    if (
+      typeof jQuery !== "undefined" &&
+      typeof jQuery.fn.slick !== "undefined"
+    ) {
+      $(motoPicturesElement).slick({
+        dots: true,
+        infinite: true,
+        rows: 1,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        lazyLoad: "ondemand",
+        responsive: [
+          {
+            breakpoint: 1660,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+          {
+            breakpoint: 1015,
+            settings: {
+              rows: 1,
+              slidesToShow: 2,
+              slidesToScroll: 2,
+            },
+          },
+          {
+            breakpoint: 802,
+            settings: {
+              rows: 1,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
       });
-  };
-
-  addImagesToCarousel();
+    } else {
+      console.error("jQuery ou Slick não está carregado ainda");
+    }
+  }
 
   $("html").css({ overflowY: "hidden" });
   fullScreen.style.display = "block";
@@ -150,13 +188,7 @@ function openItem(key) {
   main.style.filter = "blur(1px)";
 }
 
-// Função para verificar a existência da imagem
-function imageExists(src, callback) {
-  const img = new Image();
-  img.onload = () => callback(true);
-  img.onerror = () => callback(false);
-  img.src = src;
-}
+// Função para fechar modal
 
 // Fecha modal
 function closeModal() {
@@ -177,6 +209,19 @@ function closeModal() {
   main.style.filter = "";
 }
 
+// No desktop (mesmo breakpoint do menu completo), clicar fora da modal fecha;
+// no mobile não, para evitar fechamentos acidentais ao rolar/tocar
+const fullScreenFundo = document.querySelector(".fullScreen");
+const desktopQuery = window.matchMedia("(min-width: 1016px)");
+
+if (fullScreenFundo) {
+  fullScreenFundo.addEventListener("click", (e) => {
+    if (e.target === fullScreenFundo && desktopQuery.matches) {
+      closeModal();
+    }
+  });
+}
+
 // Adiciona ano nos rodapés
 document.querySelectorAll(".year").forEach((rodape) => {
   const d = new Date();
@@ -190,58 +235,47 @@ function reveal() {
   var reveals = document.querySelectorAll(".reveal");
 
   for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
 
-      if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
-      } else {
-          reveals[i].classList.remove("active");
-      }
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
   }
 }
 
 window.addEventListener("scroll", reveal);
 
-// Botões de navegação
-$(document).ready(function () {
-  const menuBtn = $(".scroll");
-  menuBtn.click(() => {
-      setTimeout(() => {
-          let downArrowButton = document.querySelector(".downArrow");
-          let upArrowButton = document.querySelector(".upArrow");
+// Botão de voltar ao topo: aparece só depois que a página é rolada
+const voltarTopo = document.querySelector(".voltarTopo");
 
-          if (downArrowButton.style.display != "none") {
-              downArrowButton.style.display = "none";
-              upArrowButton.style.display = "block";
-          } else {
-              downArrowButton.style.display = "block";
-              upArrowButton.style.display = "none";
-          }
+function toggleVoltarTopo() {
+  voltarTopo.classList.toggle("visivel", window.scrollY > 50);
+}
 
-          removeHash();
-      }, 5);
-  });
-});
+window.addEventListener("scroll", toggleVoltarTopo);
+toggleVoltarTopo();
 
 // Dá o scroll de forma suave
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
-      e.preventDefault();
+    e.preventDefault();
 
-      document.querySelector(this.getAttribute("href")).scrollIntoView({
-          behavior: "smooth",
-      });
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
   });
 });
 
 // Remove o # do link da página
 function removeHash() {
   history.pushState(
-      "",
-      document.title,
-      window.location.pathname + window.location.search
+    "",
+    document.title,
+    window.location.pathname + window.location.search,
   );
 }
 
@@ -261,9 +295,9 @@ resetHeight();
 document.addEventListener(
   "wheel",
   function touchHandler(e) {
-      if (e.ctrlKey) {
-          e.preventDefault();
-      }
+    if (e.ctrlKey) {
+      e.preventDefault();
+    }
   },
-  { passive: false }
+  { passive: false },
 );
